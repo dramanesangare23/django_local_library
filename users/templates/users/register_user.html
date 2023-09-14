@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+    <title>Register page</title>
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+
+    {% else %}
+        <h2>Register as new user</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ my_custom_form }}
+            <input type="submit" value="Register">
+        </form>
+    {% endif %}
+{% endblock %}
